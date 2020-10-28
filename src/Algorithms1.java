@@ -52,7 +52,7 @@ public class Algorithms1 {
 
     public String randomBoyName(){
         Random random = new Random();
-        random.setSeed(7L); //TODO skal fjernes før production
+        random.setSeed(7L); //TODO skal fjernes før production1
         int tal = random.nextInt(45);
         String name = new Data().getRandomDrengeNavne(tal);
         return name;
