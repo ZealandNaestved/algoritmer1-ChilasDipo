@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class Algorithms1 {
 
-    // TODO 1 - Gennemse Data klassen, og skriv gode kommentarer til det
+    // TODO 1 - Gennemse Data klassen, og skriv gode kommentarer til dettest
 
     // TODO 2 - Skriv en randomBoyName() metode i Algorithms1, som returnerer et tilfældigt drengenavn fra Data klassens randomPigeNavne property OBS: randomPigeNavne skal forblive private!
 
