@@ -27,6 +27,20 @@ public class Algorithms1 {
 
     public static void main(String[] args) {
         exampleOfPredictableRandomNumber();
+        Algorithms1 opgave = new Algorithms1();
+
+        for (int i = 0; i <10 ; i++) {
+            System.out.print("-----  Dreng   " + opgave.randomBoyName()  + "    ");
+            System.out.println();
+            System.out.print("---   Pige   " +  opgave.randomGirlName()  + "    ");
+        }
+        System.out.println("gender mixed names");
+        String[] namesnogender= opgave.randomName();
+
+        for (int i = 0; i < namesnogender.length; i++) {
+            System.out.println(namesnogender[i]);
+        }
+
     }
 
     private static void exampleOfPredictableRandomNumber() {
@@ -36,4 +50,27 @@ public class Algorithms1 {
         System.out.println(random.nextInt(45));
     }
 
+    public String randomBoyName(){
+        Random random = new Random();
+        random.setSeed(7L); //TODO skal fjernes før production
+        int tal = random.nextInt(45);
+        String name = new Data().getRandomDrengeNavne(tal);
+        return name;
+    }
+    public String randomGirlName(){
+        Random random = new Random();
+        int tal = random.nextInt(45);
+        String name = new Data().getRandomPigeNavne(tal);
+        return name;
+    }
+    public String[] randomName(){
+        int lenght = 10;
+        String[] namesnogender = new String[lenght];
+
+        for (int i = 0; i <lenght ; i=i+2) {
+            namesnogender[i] = randomGirlName();
+            namesnogender[i+1] = randomBoyName();
+        }
+        return namesnogender;
+    }
 }
