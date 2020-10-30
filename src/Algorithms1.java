@@ -40,9 +40,12 @@ public class Algorithms1 {
         for (int i = 0; i < namesnogender.length; i++) {
             System.out.println(namesnogender[i]);
         }
+        for (int i = 0; i <10 ; i++) {
+            opgave.randombogstav();
+        }
+
 
     }
-
     private static void exampleOfPredictableRandomNumber() {
         Random random = new Random();
         random.setSeed(15L); // Hvis vi angiver et seed som et long number, vil random klassen altid generere det samme tal, i det her tilfælde 21
@@ -59,6 +62,7 @@ public class Algorithms1 {
     }
     public String randomGirlName(){
         Random random = new Random();
+        random.setSeed(7L); //TODO skal fjernes før production
         int tal = random.nextInt(45);
         String name = new Data().getRandomPigeNavne(tal);
         return name;
@@ -72,5 +76,11 @@ public class Algorithms1 {
             namesnogender[i+1] = randomBoyName();
         }
         return namesnogender;
+    }
+
+    public void randombogstav() {
+          int tal = new Random().nextInt(((122-97) + 1)+97);
+          char bogstav = (char)tal;
+        System.out.println(bogstav + "   -   ");
     }
 }
