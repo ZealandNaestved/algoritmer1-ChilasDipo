@@ -44,7 +44,9 @@ public class Algorithms1 {
             opgave.randombogstav();
         }
 
-
+        for (int i = 0; i <10 ; i++) {
+            System.out.println(opgave.platorkrone());
+        }
     }
     private static void exampleOfPredictableRandomNumber() {
         Random random = new Random();
@@ -79,8 +81,19 @@ public class Algorithms1 {
     }
 
     public void randombogstav() {
-          int tal = new Random().nextInt(((122-97) + 1)+97);
-          char bogstav = (char)tal;
-        System.out.println(bogstav + "   -   ");
+        int max = 122;
+        int min = 97;
+        int tal = new Random().nextInt(((max-min)))+min;
+        System.out.println( (char)tal + "   -   ");
+    }
+
+    public boolean platorkrone() {
+        Random rng = new Random();
+        int tal = rng.nextInt(2);
+        if( tal==1){
+            return true;
+        }else {
+            return false;
+        }
     }
 }
